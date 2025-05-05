@@ -18,12 +18,10 @@ function SignupPage() {
     e.preventDefault();
     try {
       const res = await dispatch(signupUser(form)).unwrap();
-      console.log(res);
       alert(res?.message || 'Signup successful');
       navigate('/login');
     } catch (err) {
       alert(err || 'Signup failed');
-      throw new Error(err.message)
     }
   };
 
@@ -78,6 +76,10 @@ function SignupPage() {
           >
             {loading ? 'Signing up...' : 'Signup'}
           </button>
+          <div className='flex justify-between items-center'>
+            <Link to="/login">Login</Link>
+            <Link to="/forget-password">Forget Password</Link>
+          </div>
         </form>
       </div>
     </div>
