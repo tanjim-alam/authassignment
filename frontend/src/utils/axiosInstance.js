@@ -1,7 +1,8 @@
 import axios from 'axios';
-
+// https://authassignment-production.up.railway.app/
+// http://localhost:8000/api
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://authassignment-production.up.railway.app/api',
   headers: {
     'Content-Type': 'application/json',
   },

@@ -6,7 +6,11 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+const corsOption = {
+  origin: "https://authassignment-phi.vercel.app",
+  credentials: true
+}
+app.use(cors(corsOption));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
